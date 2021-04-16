@@ -1,0 +1,46 @@
+
+/*input fields design*/
+
+.form-outline .form-control:focus~.form-notch .form-notch-trailing {
+    border-top: .125rem solid #a2a2a2;
+    border-bottom: .125rem solid #adadad;
+    border-right: .125rem solid #a7a7a7;
+}
+.form-outline .form-control:focus~.form-notch .form-notch-middle {
+    border-bottom: .125rem solid;
+    border-color: #a2a2a2;
+}
+.form-outline .form-control:focus~.form-notch .form-notch-leading {
+    border-top: .125rem solid #a9a9a9;
+    border-bottom: .125rem solid #b1b1b1;
+    border-left: .125rem solid #9c9c9c;
+}
+.form-outline .form-control:focus~.form-label {
+    color: #757575;
+}
+
+select{
+    color: #666;
+}
+
+select:focus{
+    border-color: #666!important;
+    -webkit-box-shadow: none!important;
+    box-shadow: none!important;
+}
+
+.errorCheckForInput{
+    font-size: 12px;
+    text-align: justify!important;
+    margin-left: 3px!important;
+}
+
+@media only screen and (max-width: 418px) {
+    .fullName{
+        display: flex;
+        flex-direction: column;
+    }
+    .lastName{
+        margin-top: 20px;
+    }
+}

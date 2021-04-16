@@ -1,0 +1,144 @@
+@import "global.css";
+
+body{
+    background-color: #ffffff;
+    overflow-x: hidden;
+}
+select{
+    color: #666!important;
+}
+.my-wrapper{
+    margin-top: 4%;
+}
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active{
+    color: #121313!important;
+    border: none!important;
+    background-color: #e7e6e6 !important;
+    border-radius: 5px!important;
+}
+.nav-tabs .nav-link:hover {
+    border-radius: 2px!important;
+}
+/*settings page style*/
+
+.my-settings-form{
+    padding: 12px;
+}
+
+.sHeader{
+    padding: 11px;
+    font-weight: 500;
+    font-size: 22px;
+    color: #333;
+}
+
+.sTabHeaders{
+    padding-bottom: 11px;
+    font-weight: 500;
+    font-size: 20px;
+    color: #333;
+}
+
+.s-left-side {
+   border-right: 1px solid #ccc;
+}
+
+.s-right-content{
+    padding: 1px 8px 0 12px;
+    border-bottom: 1px solid #bebebe;
+    border-top: 1px solid #bebebe;
+}
+.list-items{
+    list-style-type: none;
+    padding-left: 1px;
+    padding-right: 1px;
+    margin-bottom: 2px;
+}
+.list-items>li{
+    border-bottom: 1px solid #dbdbdb;
+    padding: 5px 0 5px 0;
+}
+.list-items>li:last-child{
+    border-bottom: none;
+}
+.list-items>li:nth-child(2){
+    border-bottom: 1px solid #dbdbdb;
+}
+.list-items>li>div{
+    margin: 0 ;
+    padding: 13px 0 13px 0;
+}
+.list-items>li>div:hover{
+    background-color: #f5f6f7!important;
+}
+
+.list-items>li>div>div:first-child{
+    color: #1c1e21;
+    font-weight: 600;
+    line-height: 20px;
+}
+.list-items>li>div>div:nth-child(2){
+    color: #65676b;
+    font-size: 15px;
+    letter-spacing: -0.24px;
+    line-height: 20px;
+
+}
+
+
+.firstLoginData{
+    padding-top: 10px;
+}
+
+
+
+/*media rules */
+
+
+/*global private media rules*/
+@media only screen and (max-width: 1650px) {
+    .my-wrapper{
+        margin-top: 5%;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .my-wrapper{
+        margin-top: 6.5%;
+    }
+}
+@media only screen and (max-width: 930px) {
+    .my-wrapper{
+        margin-top: 8%;
+    }
+}
+@media only screen and (max-width: 770px) {
+    .my-wrapper{
+        margin-top: 9.5%;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .my-wrapper{
+        margin-top: 12%;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .my-wrapper{
+        margin-top: 13.5%;
+    }
+}
+@media only screen and (max-width: 415px) {
+    .my-wrapper{
+        margin-top: 17%;
+    }
+}
+
+
+/*media rules for settings page*/
+
+@media only screen and (max-width: 1600px) {
+
+}
+
+
+
