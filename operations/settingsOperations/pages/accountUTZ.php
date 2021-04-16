@@ -2,7 +2,9 @@
 
 <?php
 if (isset($_POST['firstLoginInsert'])){
-    echo "dashfjghajksdnaskjhdjasdgb asjhnmdb ahjsnmbd ajhsmndb ";
+    $selectType = $_POST['selectUserType'];
+
+    echo $selectType;
 }
 ?>
 <form method="post" class="firstLoginData">
@@ -23,19 +25,19 @@ if (isset($_POST['firstLoginInsert'])){
         <div class="row mb-4 fullName">
             <div class="col">
                 <div class="form-outline">
-                    <input type="text" id="childsFName" class="form-control" name="child_firstname" minlength="2" maxlength="20" required/>
+                    <input type="text" id="childsFName" class="form-control" name="child_firstname" minlength="2" maxlength="20" />
                     <label class="form-label" for="childsFName">Child's first name</label>
                 </div>
             </div>
             <div class="col lastName">
                 <div class="form-outline">
-                    <input type="text" id="childsLName" class="form-control" name="child_lastname" minlength="2" maxlength="24" required/>
+                    <input type="text" id="childsLName" class="form-control" name="child_lastname" minlength="2" maxlength="24" />
                     <label class="form-label" for="childsLName">Child's last name</label>
                 </div>
             </div>
         </div>
         <div class="form-group mb-4">
-            <select id="selectSubject" class="form-select custom-select" name='select' onkeypress="userTypeChange()" required>
+            <select id="selectSubject" class="form-select custom-select" name='select' onkeypress="userTypeChange()" >
                 <option value="" selected disabled>Select Subject</option>
                 <option value="1">English</option>
                 <option value="2">Spanish</option>
@@ -43,7 +45,7 @@ if (isset($_POST['firstLoginInsert'])){
             </select>
         </div>
         <div class="form-outline mb-4">
-            <input type="text" id="childsPassword" class="form-control" name="child_password" required/>
+            <input type="text" id="childsPassword" class="form-control" name="child_password" />
             <label class="form-label" for="childsPassword">Child's password</label>
         </div>
     </div>

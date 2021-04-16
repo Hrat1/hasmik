@@ -90,7 +90,12 @@ select{
     padding-top: 10px;
 }
 
+/*settings page start*/
+#child{
+    display: none;
+}
 
+/*settings page end*/
 
 /*media rules */
 
