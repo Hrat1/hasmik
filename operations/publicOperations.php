@@ -137,6 +137,7 @@ if (isset($_POST['forgot_submit'])) {
         } else {
             $email = encrypt($email);
             $row = $conn->query("SELECT  email, first_name, verified, forgot_pass FROM users WHERE  email ='$email' LIMIT 1");
+            $requestResult = mysqli_fetch_assoc($row);
 
             if ($row->num_rows == 1) {
                 $date = date("d-m-Y H:i:s");
@@ -147,6 +148,12 @@ if (isset($_POST['forgot_submit'])) {
 
                 if ($updateDBData) {
                     echo $response;
+                    $email = decrypt($requestResult['email']);
+                    $emailDescription = "Change Password";
+                    $emailBody = '<h3>To change password click on link below.</h3><h5><a href="http://localhost:8888/auth/changePassword.php?changePassId='.$encryptedVerifiedId.'">Change password</a></h5><hr/><p>best regards <b>YouCan Team</b></p>';
+
+                    echo "<script src='../js/smtp.js'></script><script src='../js/sendEmail.js'></script>";
+                    echo "<script> sendEmail('$email','$emailDescription', '$emailBody')</script>";
                     echo "<script>setTimeout(function(){document.location = 'signin.php';}, 3000);</script>";
                 } else {
                     echo $conn->error;
@@ -167,14 +174,21 @@ if (isset($_POST['forgot_submit'])) {
 
 if (isset($_GET['vkey']) && $_GET['vkey'] != null) {
     $vkey = $_GET['vkey'];
-    $resultSet = $conn->query("SELECT vkey, verified FROM users WHERE  vkey ='$vkey' AND verified = 0 LIMIT 1");
+    $resultSet = $conn->query("SELECT vkey, verified, email FROM users WHERE  vkey ='$vkey' AND verified = 0 LIMIT 1");
 
     if ($resultSet->num_rows == 1) {
         $updateVerificationStatus = $conn->query("UPDATE users SET verified = 1 WHERE vkey = '$vkey' LIMIT 1");
+        $requestResult = mysqli_fetch_assoc($resultSet);
 
         if ($updateVerificationStatus) {
             $responseTitle = "Your account has been verified.";
             $responseDescription = "You may now <a href='/auth/signin.php'>SignIn</a>.";
+            $email = decrypt($requestResult['email']);
+            $emailDescription = "You are already verified.";
+            $emailBody = '<h3>Thank you for verifying your account.</h3><h5>Now you can <a href="http://localhost:8888/auth/signin.php">login</a></h5><hr/><p>best regards <b>YouCan Team</b></p>';
+
+            echo "<script src='../js/smtp.js'></script><script src='../js/sendEmail.js'></script>";
+            echo "<script> sendEmail('$email','$emailDescription', '$emailBody')</script>";
         } else {
             $responseTitle = $conn->error;
             $responseDescription = "<a href='index.php'>Home</a>";
@@ -201,10 +215,18 @@ if (isset($_GET['changePassId']) && $_GET['changePassId'] != null) {
                 if ( $_POST['password'] == $_POST['passwordTwo']) {
                     $password = encrypt($_POST['password']);
                     $updatePasswordQuery = $conn->query("UPDATE users SET verified = '1', forgot_pass = NULL, password = '$password'  WHERE forgot_pass = '$userId' LIMIT 1");
+                    $requestResult = mysqli_fetch_assoc($resultSet);
 
                     if ($updatePasswordQuery) {
                         echo $response;
-                        echo "<script>setTimeout(function(){document.location = '/auth/signin.php';}, 3000);</script>";
+                        $email = decrypt($requestResult['email']);
+                        echo $email;
+                        $emailDescription = "Password already changed.";
+                        $emailBody = '<h3>Your password already changed. If it is not you please change your password with forgot password page.</h3><h5><a href="http://localhost:8888/auth/forgotPassword.php">Forgot password</a></h5><hr/><p>best regards <b>YouCan Team</b></p>';
+
+                        echo "<script src='../js/smtp.js'></script><script src='../js/sendEmail.js'></script>";
+                        echo "<script> sendEmail('$email','$emailDescription', '$emailBody')</script>";
+                        echo "<script>setTimeout(function(){document.location = '/auth/signin.php';}, 30000);</script>";
                     } else {
                         $error = $conn->error;
                     }
