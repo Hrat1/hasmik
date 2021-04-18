@@ -38,7 +38,7 @@ if (isset($_POST['firstLoginInsert'])){
         </div>
         <div class="form-group mb-4">
             <select id="selectSubject" class="form-select custom-select" name='select' onkeypress="userTypeChange()" >
-                <option value="" selected disabled>Select Subject</option>
+                <option value="" selected disabled>Subject</option>
                 <option value="1">English</option>
                 <option value="2">Spanish</option>
                 <option value="3">JavaScript</option>

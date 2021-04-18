@@ -11,18 +11,18 @@ function changeUserType(sel) {
     let selectSubject = document.getElementById("selectSubject");
     let childsPassword = document.getElementById("childsPassword");
 
+    function childsSectionShowHide(requiredBool, displayStyle){
+        childItems.style.display = `${displayStyle}`;
+        childsFName.required = requiredBool;
+        childsLName.required = requiredBool;
+        selectSubject.required = requiredBool;
+        childsPassword.required = requiredBool;
+    }
+
     
     if (sel.options[sel.selectedIndex].text === "Parent"){
-        childItems.style.display = "block";
-        childsFName.required = true;
-        childsLName.required = true;
-        selectSubject.required = true;
-        childsPassword.required = true;
+        childsSectionShowHide(true, "block")
     }else {
-        childItems.style.display = "none";
-        childsFName.required = false;
-        childsLName.required = false;
-        selectSubject.required = false;
-        childsPassword.required = false;
+        childsSectionShowHide(false, "none")
     }
 }
