@@ -1,0 +1,14 @@
+Email.send({
+    Host : "smtp.elasticemail.com",
+    Username : "hratjan99@gmail.com",
+    Password : "A4089B8CB9D568584643EE4213BBEA22AB3D",
+    To : 'hrat.tahmazyan99@gmail.com',
+    From : "hratjan99@gmail.com",
+    Subject : "1.0",
+    Body : "And this is the body"
+}).then(
+    message => alert(message)
+);
+
+
+SecureToken : "0db848e5-1280-4495-b751-0c0bb0be82c7",
