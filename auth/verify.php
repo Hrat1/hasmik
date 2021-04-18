@@ -1,6 +1,6 @@
 <?php
-include_once('db.php');
-include_once('operations/publicOperations.php');
+include_once('../db.php');
+include_once('../operations/publicOperations.php');
 if  (!isset($_GET['vkey']) || $_GET['vkey'] == null){
     header("Location: /auth/signin.php");
 }

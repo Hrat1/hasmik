@@ -6,6 +6,5 @@ function sendEmail(to, subject, body){
         Subject : `${subject}`,
         Body : `${body}`
     }).then(
-        message => alert(message)
     );
 }

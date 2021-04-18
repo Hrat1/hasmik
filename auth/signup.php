@@ -62,6 +62,8 @@ include_once("../operations/publicOperations.php");
 </div>
 <script src="../bootstrap/js/jquery.min.js"></script>
 <script type="text/javascript" src="../mdb/js/mdb.min.js"></script>
+<script src="../js/smtp.js"></script>
+<script src="../js/sendEmail.js"></script>
 <script src="../js/auth.js"></script>
 </body>
 </html>

@@ -35,7 +35,14 @@ if (isset($_POST["reg_submit"])) {
             } else {
                 $sql = "INSERT INTO users (first_name, last_name, email, password, vkey)VALUES ('" . $first_name . "', '" . $last_name . "', '" . $email . "', '" . $pass . "', '" . $vkey . "')";
                 if (mysqli_query($conn, $sql)) {
+                    $email = decrypt($email);
+                    $first_name = decrypt($first_name);
+                    $emailDescription = "Verify your account";
+                    $emailBody = '<h3>Hi '. $first_name .'</h3><h4>Thank you for registering in our website, please verify your account with clicking link in below.</h4><a href="http://localhost:8888/auth/verify.php?vkey='.$vkey.'">Verify account</a>';
+
                     echo $regSuccess;
+                    echo "<script src='../js/smtp.js'></script><script src='../js/sendEmail.js'></script>";
+                    echo "<script> sendEmail('$email','$emailDescription', '$emailBody')</script>";
                     echo "<script>setTimeout(function(){document.location = 'signin.php';}, 4000);</script>";
                 } else {
                     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
