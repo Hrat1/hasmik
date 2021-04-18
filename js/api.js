@@ -23,7 +23,7 @@ function checkUsernameStatus() {
                 usernameCheck.innerHTML = msg;
             },
         });
-    } else if (!validateUsername(username)) {
+    } else if (!validateUsername(username) || username.length < 4) {
         usernameCheck.style.marginTop = "-22px";
         usernameCheck.style.marginBottom = "12px";
         usernameCheck.innerHTML = "Username can have a minimum 4 characters, lowercase letters, minimum one number and one of this _ - . symbols";
