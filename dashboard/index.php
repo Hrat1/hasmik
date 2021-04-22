@@ -1,6 +1,5 @@
 <?php
 include_once("../operations/privateOperatins.php");
-include_once("../operations/components/checkUserType.php")
 ?>
 <!doctype html>
 <html lang="en">

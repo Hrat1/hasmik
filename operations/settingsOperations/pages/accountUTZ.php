@@ -27,19 +27,19 @@
         <div class="row mb-4 fullName">
             <div class="col">
                 <div class="form-outline">
-                    <input type="text" id="childsFName" class="form-control" name="child_firstname" onkeyup="checkIsAllFilled()" minlength="2" maxlength="20" />
+                    <input type="text" id="childsFName" class="form-control name" name="child_firstname" value="<?php if (isset($childFName)){echo $childFName;}?>"  onkeyup="checkIsAllFilled()" minlength="2" maxlength="20" />
                     <label class="form-label" for="childsFName">Child's first name</label>
                 </div>
             </div>
             <div class="col lastName">
                 <div class="form-outline">
-                    <input type="text" id="childsLName" class="form-control" name="child_lastname" onkeyup="checkIsAllFilled()" minlength="2" maxlength="24" />
+                    <input type="text" id="childsLName" class="form-control name" name="child_lastname" value="<?php if (isset($childLName)){echo $childLName;}?>"  onkeyup="checkIsAllFilled()" minlength="2" maxlength="24" />
                     <label class="form-label" for="childsLName">Child's last name</label>
                 </div>
             </div>
         </div>
         <div class="form-outline mb-4">
-            <input type="text" id="childsPassword" class="form-control"  name="child_password" onkeyup="checkPassword(this); checkIsAllFilled()" autocomplete="off" />
+            <input type="text" id="childsPassword" class="form-control" value="<?php if (isset($childPass)){echo $childPass;}?>"  name="child_password" onkeyup="checkPassword(this); checkIsAllFilled()" autocomplete="off" />
             <label class="form-label" for="childsPassword">Child's password</label>
         </div>
         <p id="passCheck" class="errorCheckForInput"></p>
