@@ -1,15 +1,10 @@
 <!-- settings page user type == zero-->
-
-<?php
-if (isset($_POST['firstLoginInsert'])){
-    $selectType = $_POST['selectUserType'];
-
-    echo $selectType;
-}
-?>
 <form method="post" class="firstLoginData">
+    <div class="errorFromBackEnd">
+        <?php if (isset($errorMsg)){echo "* " . $errorMsg;}?>
+    </div>
     <div class="form-outline mb-4">
-        <input type="text" id="username" class="form-control" onkeyup="checkUsernameStatus(); checkIsAllFilled()" autocomplete="off" minlength="4" required/>
+        <input type="text" id="username" class="form-control" name="username" onkeyup="checkUsernameStatus(); checkIsAllFilled()" autocomplete="off" minlength="4" required/>
         <label class="form-label" for="username">Username</label>
     </div>
     <p id="usernameCheck" class="errorCheckForInput"></p>
@@ -21,7 +16,7 @@ if (isset($_POST['firstLoginInsert'])){
         </select>
     </div>
     <div class="form-group mb-4">
-        <select id="selectSubject" class="form-select custom-select" onchange="checkIsAllFilled()" name='select'>
+        <select id="selectSubject" class="form-select custom-select" onchange="checkIsAllFilled()" name='selectLesson'>
             <option value="" selected disabled>Select Lesson</option>
             <option value="1">English</option>
             <option value="2">Spanish</option>

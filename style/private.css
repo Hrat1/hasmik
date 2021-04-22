@@ -89,7 +89,10 @@ select{
 .firstLoginData{
     padding-top: 10px;
 }
-
+.errorFromBackEnd{
+    color: red;
+    padding-bottom: 10px;
+}
 /*settings page start*/
 #child{
     display: none;
