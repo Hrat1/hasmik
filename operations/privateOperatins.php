@@ -48,7 +48,7 @@ if (isset($_POST['firstLoginInsert'])) {
                                     $encChildEmail = encrypt($childEmail);
                                     $childVKey = md5($childEmail);
 
-                                    $insertChildData = "INSERT INTO users (username, first_name, last_name, email, user_type, lesson_type, password, verified, vkey, parent_vkey) VALUES ( '". $encChildEmail ."','" . $encChildFName . "', '" . $encChildLName . "', '" . $encChildEmail . "',  '1', '" . $lessonType . "', '" . $encChildPass . "', '1', '" . $childVKey . "', '" . $userVKey . "')";
+                                    $insertChildData = "INSERT INTO users (username, first_name, last_name, email, user_type, lesson_type, password, verified, vkey, parent_vkey) VALUES ( '". $encChildEmail ."','" . $encChildFName . "', '" . $encChildLName . "', '" . $encChildEmail . "',  '3', '" . $lessonType . "', '" . $encChildPass . "', '1', '" . $childVKey . "', '" . $userVKey . "')";
                                     $updateParentData = "UPDATE users SET user_type='" . $userType . "', lesson_type='" . $lessonType . "', username='" . $encUsername . "' WHERE email='" . $_SESSION['u_id'] . "'";
 
                                     if (mysqli_query($conn, $insertChildData)) {

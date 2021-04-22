@@ -27,7 +27,16 @@ privateSession($conn);
                     <a class="nav-link active" id="v-tabs-home-tab" data-mdb-toggle="tab" href="#s-tabs-account"
                        role="tab"
                        aria-controls="v-tabs-home" aria-selected="true">General</a>
-                    <a class="nav-link <?php echo ($getUserType == 0?'disabled':''); ?>" href="<?php echo ($getUserType == 0?'':'#s-tabs-security'); ?>" id="v-tabs-profile-tab" data-mdb-toggle="tab" role="tab"
+                    <?php
+                    if ($getUserType == 2) {
+                        echo '<a class="nav-link" id="v-tabs-child-tab" data-mdb-toggle="tab" href="#s-tabs-child" role="tab"
+                       aria-controls="v-tabs-home" aria-selected="true">Children</a>';
+                    }
+                    ?>
+
+                    <a class="nav-link <?php echo($getUserType == 0 ? 'disabled' : ''); ?>"
+                       href="<?php echo($getUserType == 0 ? '' : '#s-tabs-security'); ?>" id="v-tabs-profile-tab"
+                       data-mdb-toggle="tab" role="tab"
                        aria-controls="v-tabs-profile" aria-selected="false">Security</a>
                 </div>
             </div>
@@ -39,6 +48,12 @@ privateSession($conn);
                         <?php include_once "../operations/settingsOperations/account.php" ?>
                     </div>
                     <?php
+                    if ($getUserType == 2) {
+                        echo '<div class="tab-pane fade" id="s-tabs-child" role="tabpanel" aria-labelledby="v-tabs-profile-tab">'; ?>
+                        <?php
+                        include_once("../operations/settingsOperations/pages/childSection.php");
+                        echo ' </div>';
+                    }
                     if ($getUserType != 0) {
                         echo '<div class="tab-pane fade" id="s-tabs-security" role="tabpanel" aria-labelledby="v-tabs-profile-tab">
                             Profile content

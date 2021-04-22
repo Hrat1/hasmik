@@ -24,7 +24,7 @@ if ($getUserType == "2"){
     $childDataRow = mysqli_fetch_assoc($getChildData);
 
     $getChildFName = decrypt($childDataRow['first_name']);
-    $getChildLName = decrypt($childDataRow['first_name']);
+    $getChildLName = decrypt($childDataRow['last_name']);
     $getChildType = $childDataRow['user_type'];
     $getChildEmail = decrypt($childDataRow['email']);
     $getChildName = decrypt($childDataRow['username']);
@@ -37,7 +37,7 @@ if ($getUserType == "2"){
     $parentDataRow = mysqli_fetch_assoc($getParentData);
 
     $getParentFName = decrypt($parentDataRow['first_name']);
-    $getParentLName = decrypt($parentDataRow['first_name']);
+    $getParentLName = decrypt($parentDataRow['last_name']);
     $getParentType = $parentDataRow['user_type'];
     $getParentEmail = decrypt($parentDataRow['email']);
     $getParentName = decrypt($parentDataRow['username']);
