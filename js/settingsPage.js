@@ -70,3 +70,20 @@ function checkIsAllFilled() {
 
     // console.log(checkUsernameStatus);
 }
+
+document.getElementById("editPassword").onclick = function (){toggleChangePass()}
+
+function toggleChangePass(){
+    let changePassWrapper = document.getElementById("changePassWrapper");
+    let addBorderToWDiv = document.getElementsByClassName("changePass");
+
+    if (changePassWrapper.style.display === "block") {
+        changePassWrapper.style.display = "none";
+        addBorderToWDiv[0].style.borderBottom = "none";
+        document.getElementById("editPassword").innerText = "Edit";
+    }else{
+        changePassWrapper.style.display = "block";
+        addBorderToWDiv[0].style.borderBottom = "1px solid #bfbfbf";
+        document.getElementById("editPassword").innerText = "Exit";
+    }
+}

@@ -33,3 +33,6 @@ function checkUsernameStatus() {
     }
 }
 
+function checkPasswordStatus(){
+
+}

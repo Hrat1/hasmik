@@ -19,6 +19,8 @@ select{
 .nav-tabs .nav-link:hover {
     border-radius: 2px!important;
 }
+
+
 /*settings page style*/
 
 .my-settings-form{
@@ -69,7 +71,7 @@ select{
     padding: 13px 0 13px 0;
 }
 .list-items>li>div:hover{
-    background-color: #f5f6f7!important;
+    background-color: #f5f6f7;
 }
 
 .list-items>li>div>div:first-child{
@@ -96,10 +98,44 @@ select{
 }
 
 
-
-/*settings page start*/
 #child{
     display: none;
+}
+.s-list>button{
+    background: #ebedf0;
+    border: solid 1px #ccd0d5;
+    color: #4b4f56;
+    float: right;
+    font-family: inherit;
+    font-size: 12px;
+    border-radius: 2px;
+    box-sizing: content-box;
+    -webkit-font-smoothing: antialiased;
+    font-weight: bold;
+    justify-content: center;
+    padding: 0 8px;
+    text-align: center;
+    text-shadow: none;
+    vertical-align: middle;
+}
+.s-list>button:hover {
+    background-color: #dee1e4;
+}
+
+.noHover:hover{
+    background-color: transparent!important;
+}
+#changePassWrapper{
+    display: none;
+    padding: 10px 20px;
+}
+#changePassWrapper>form{
+    max-width: 431px;
+    margin: 0 auto;
+}
+#changePassWrapper>form>button{
+    max-width: fit-content;
+    float: right;
 }
 /*settings page end*/
 
@@ -116,6 +152,9 @@ select{
 @media only screen and (max-width: 1200px) {
     .my-wrapper{
         margin-top: 6.5%;
+    }
+    .s-list>span{
+        display: none;
     }
 }
 @media only screen and (max-width: 930px) {

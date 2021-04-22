@@ -56,8 +56,10 @@ privateSession($conn);
                     }
                     if ($getUserType != 0) {
                         echo '<div class="tab-pane fade" id="s-tabs-security" role="tabpanel" aria-labelledby="v-tabs-profile-tab">
-                            Profile content
-                        </div>';
+                           '; ?>
+                    <?php
+                        include_once "../operations/settingsOperations/pages/security.php";
+                        echo '</div>';
                     }
                     ?>
 
