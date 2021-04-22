@@ -25,7 +25,7 @@ include_once("../operations/privateOperatins.php");
     } else if ($getUserType == 2) {
         include_once('userTypes/parent/index.php');
     } else if ($getUserType == 3) {
-        include_once('userTypes/teacher/index.php');
+        include_once('userTypes/student/index.php');
     }
     ?>
     <script src="../mdb/js/mdb.min.js"></script>
