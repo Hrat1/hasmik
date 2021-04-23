@@ -21,17 +21,17 @@
                             </div>
                             <div class="form-group">
                                 <div class="form-outline mb-4">
-                                    <input type="text" id="childsPassword" class="form-control" name="currentPassword" onkeyup="" minlength="8" autocomplete="off" />
+                                    <input type="text" id="currentPass" class="form-control" name="currentPassword" onkeyup="checkPasswordStatus()" minlength="8" autocomplete="off" />
                                     <label class="form-label" for="childsPassword">Current</label>
                                 </div>
-                                <p class="errorCheckForInput"></p>
+                                <p id="currentPassCheck" class="errorCheckForInput"></p>
                                 <div class="form-outline mb-4">
-                                    <input type="text" id="childsPassword" class="form-control" name="child_password" onkeyup="checkPassword(this)" minlength="8" autocomplete="off" />
+                                    <input type="text" id="newPass" class="form-control" name="child_password" onkeyup="checkPassword(this)" minlength="8" autocomplete="off" />
                                     <label class="form-label" for="childsPassword">New Password</label>
                                 </div>
                                 <p id="passCheck" class="errorCheckForInput"></p>
                                 <div class="form-outline mb-4">
-                                    <input type="text" id="childsPassword" class="form-control"  name="child_password" onkeyup="" minlength="8" autocomplete="off" />
+                                    <input type="text" id="reEnterNewPass" class="form-control"  name="child_password" onkeyup="" minlength="8" autocomplete="off" />
                                     <label class="form-label" for="childsPassword">Re-type new password</label>
                                 </div>
                             </div>

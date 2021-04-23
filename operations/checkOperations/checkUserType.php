@@ -11,6 +11,7 @@ $userName = $userDataRow['username'];
 $userLessonType = $userDataRow['lesson_type'];
 $userVKey = $userDataRow['vkey'];
 $userParent = $userDataRow['parent_vkey'];
+$userPass = $userDataRow['password'];
 
 //decrypted
 $userFirstNameDecr = decrypt($userFirstName);

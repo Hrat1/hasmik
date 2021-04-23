@@ -1,5 +1,5 @@
 // let script = document.createElement('script');
-// script.src = '../bootstrap/js/jquery.min.js';
+// script.src = '../js/validations.js';
 // script.type = 'text/javascript';
 // document.getElementsByTagName('head')[0].appendChild(script);
 
@@ -34,5 +34,25 @@ function checkUsernameStatus() {
 }
 
 function checkPasswordStatus(){
-
+    let password  = $("#currentPass").val();
+    let passCheck = document.getElementById('currentPassCheck');
+    if (password.length > 7 && validatePassword(password)) {
+        $.ajax({
+            type: 'post',
+            url: '../operations/checkOperations/checkInData.php',
+            data: {password: password},
+            success: function (msg) {
+                passCheck.style.marginTop = "-22px";
+                passCheck.style.marginBottom = "12px";
+                passCheck.innerHTML = msg;
+            }
+        });
+    }else if (!validatePassword(password) || password.length < 8) {
+        passCheck.style.marginTop = "-22px";
+        passCheck.style.marginBottom = "12px";
+        passCheck.innerHTML = "Please write valid password";
+    }else {
+        passCheck.innerHTML = "";
+        passCheck.style.margin = "0";
+    }
 }

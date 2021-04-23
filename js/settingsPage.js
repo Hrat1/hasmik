@@ -67,9 +67,10 @@ function checkIsAllFilled() {
             }
         }
     }, 100);
-
-    // console.log(checkUsernameStatus);
 }
+
+
+// change password button function
 
 document.getElementById("editPassword").onclick = function (){toggleChangePass()}
 

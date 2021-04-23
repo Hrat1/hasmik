@@ -1,4 +1,5 @@
 <?php
+session_start();
 include_once('../../db.php');
 include_once("../encrypt.php");
 
@@ -30,5 +31,30 @@ if (isset($_POST['email'])) {
         echo "Email already exists.";
     }else{
         echo "Email is not registered.";
+    }
+}
+
+//check password is equal to current password
+
+if (isset($_POST['password'])) {
+    $password = $_POST['password'];
+    if (strlen($password) > 7 && $password != null && strlen($password) < 40) {
+        $userId = $_SESSION['u_id'];
+        $encPass = encrypt($password);
+
+        $sql = "select * from users where email='" . $userId . "' and password='". $encPass ."' ";
+        $result = $conn->query($sql);
+
+        if (!$result) {
+            trigger_error('Invalid query: ' . $conn->error);
+        }
+
+        if($result->num_rows > 0) {
+            echo "Password is correct";
+        }else {
+            echo "Enter a valid password and try again.";
+        }
+    }else{
+        echo "Enter a valid password and try again.";
     }
 }
