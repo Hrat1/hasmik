@@ -52,9 +52,9 @@ if (isset($_POST['password'])) {
         if($result->num_rows > 0) {
             echo "Password is correct";
         }else {
-            echo "Enter a valid password and try again.";
+            echo "Enter a valid password";
         }
     }else{
-        echo "Enter a valid password and try again.";
+        echo "Enter a valid password";
     }
 }

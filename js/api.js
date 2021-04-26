@@ -56,3 +56,50 @@ function checkPasswordStatus(){
         passCheck.style.margin = "0";
     }
 }
+
+function changeUserPassword(){
+    let newPass = $("#newPass").val();
+    let reTypePass = $("#reEnterNewPass").val();
+    let backEndError = $("#errorFromBackEnd");
+    let buttonChangePass = document.getElementById('changePassword');
+    let checkCurrentPass = $("#currentPassCheck");
+    let checkNewPass = $("#passCheck");
+    let checkReEnteredPass = $("#reEnterPassCheck");
+
+    if (newPass === reTypePass){
+        if (newPass.length > 7 && validatePassword(newPass)) {
+            $.ajax({
+                type: 'post',
+                url: '../operations/liveUpdates/changePass.php',
+                data: {changePass: newPass},
+                success: function (msg) {
+                    console.log("asdjhgahsdgfv");
+                    if (msg === "Your password has changed.") {
+                        backEndError.css("color", "green");
+                        $('input.chPass').val('');
+                        buttonChangePass.disabled = true;
+                        backEndError.text(msg);
+                        checkCurrentPass.text("");
+                        checkNewPass.text("");
+                        checkReEnteredPass.text("");
+                        checkCurrentPass.css("margin","0");
+                        checkNewPass.css("margin","0");
+                        checkReEnteredPass.css("margin","0");
+                    }else {
+                        backEndError.css("color", "red");
+                        buttonChangePass.disabled = true;
+                        backEndError.text(msg);
+                    }
+                }
+            })
+        }else {
+            backEndError.css("color", "red");
+            buttonChangePass.disabled = true;
+            backEndError.text("Password is not valid.");
+        }
+    }else {
+        backEndError.css("color", "red");
+        buttonChangePass.disabled = true;
+        backEndError.text("Passwords do not match");
+    }
+}

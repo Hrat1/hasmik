@@ -70,6 +70,7 @@ function checkIsAllFilled() {
 }
 
 
+// change password from settings page section
 // change password button function
 
 document.getElementById("editPassword").onclick = function (){toggleChangePass()}
@@ -87,4 +88,53 @@ function toggleChangePass(){
         addBorderToWDiv[0].style.borderBottom = "1px solid #bfbfbf";
         document.getElementById("editPassword").innerText = "Exit";
     }
+}
+
+// check is re-entered password equal to new password
+
+function isEqualReTypedPass(){
+    let checkIsEqualPassValues = document.getElementById('reEnterPassCheck');
+
+    setTimeout(function () {
+        let newPass = document.getElementById('newPass').value;
+        let reEnterPass = document.getElementById('reEnterNewPass').value;
+        if (newPass === reEnterPass) {
+            checkIsEqualPassValues.style.marginTop = "-22px";
+            checkIsEqualPassValues.style.marginBottom = "12px";
+            checkIsEqualPassValues.innerText = "Passwords match";
+        }else {
+            checkIsEqualPassValues.style.marginTop = "-22px";
+            checkIsEqualPassValues.style.marginBottom = "12px";
+            checkIsEqualPassValues.innerText = "Passwords do not match";
+        }
+    },100);
+}
+
+// change password submit button toggle activation
+
+function changePassCheckFilled() {
+    let currentPass = document.getElementById('currentPass').value;
+    let newPass = document.getElementById('newPass').value;
+    let reEnterPass = document.getElementById('reEnterNewPass').value;
+    let buttonChangePass = document.getElementById('changePassword');
+
+    setTimeout(function () {
+        let checkCurrentPass = document.getElementById('currentPassCheck').innerText;
+        let checkNewPass = document.getElementById('passCheck').innerText;
+        let checkReEnteredPass = document.getElementById('reEnterPassCheck').innerText;
+
+        if (currentPass.length > 7 && validatePassword(currentPass) && checkCurrentPass === "Password is correct") {
+            if (newPass.length > 7 && validatePassword(newPass) && checkNewPass === "") {
+                if (reEnterPass.length > 7 && validatePassword(reEnterPass) && reEnterPass === newPass && checkReEnteredPass === "Passwords match") {
+                    buttonChangePass.disabled = false;
+                }else {
+                    buttonChangePass.disabled = true;
+                }
+            }else {
+                buttonChangePass.disabled = true;
+            }
+        }else {
+            buttonChangePass.disabled = true;
+        }
+    },100);
 }
