@@ -1,0 +1,36 @@
+<div aria-hidden="true" aria-labelledby="addLesson" class="modal fade" id="addLessonModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addLesson">Add Lesson</h5>
+                <button aria-label="Close" class="btn-close" data-mdb-dismiss="modal" type="button"></button>
+            </div>
+            <div class="modal-body">
+                <p class="errorFromBackEnd"></p>
+                <form>
+                    <div class="form-outline mb-4">
+                        <input type="text" id="lessonTitle" class="form-control -bs" name="add_lesson_title" minlength="5" required/>
+                        <label class="form-label" for="lessonTitle">Title</label>
+                    </div>
+                    <div class="form-outline mb-2">
+                        <input type="text" id="lessonLink" class="form-control -bs" name="lesson_link" minlength="10" required/>
+                        <label class="form-label" for="lessonLink">Meeting Link</label>
+                    </div>
+                    <div class="form mb-4">
+                        <label for="lessonDate">Lesson Date</label>
+                        <input type="datetime-local" id="lessonDate" class="form-control -bs" name="lesson_date" required/>
+                    </div>
+                    <div class="form-outline mb-4">
+                        <textarea class="form-control" id="lessonDescription"></textarea>
+                        <label for="lessonDescription" class="form-label">Description</label>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-light" data-mdb-dismiss="modal" type="button">Close</button>
+                <button class="btn btn-success" onclick="addLesson();" type="button">Add Lesson</button>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -91,7 +91,7 @@ if (isset($_POST['log_submit'])) {
                 $requestResult = mysqli_fetch_assoc($requestResult);
 
                 if ($requestResult['password'] === $pass && $requestResult['verified'] == 1) {
-                    if ($requestResult['user_type'] > 3){
+                    if ($requestResult['user_type'] > 4){
                         $_SESSION["a_id"] = $email;
                         echo "<script>location.reload();</script>";
                     }else {
