@@ -27,14 +27,14 @@ function checkUsernameStatus() {
         usernameCheck.style.marginTop = "-22px";
         usernameCheck.style.marginBottom = "12px";
         usernameCheck.innerHTML = "Username can have a minimum 4 characters, lowercase letters, minimum one number and one of this _ - . symbols";
-    }else {
+    } else {
         usernameCheck.innerHTML = "";
         usernameCheck.style.margin = "0";
     }
 }
 
-function checkPasswordStatus(){
-    let password  = $("#currentPass").val();
+function checkPasswordStatus() {
+    let password = $("#currentPass").val();
     let passCheck = document.getElementById('currentPassCheck');
     if (password.length > 7 && validatePassword(password)) {
         $.ajax({
@@ -47,17 +47,17 @@ function checkPasswordStatus(){
                 passCheck.innerHTML = msg;
             }
         });
-    }else if (!validatePassword(password) || password.length < 8) {
+    } else if (!validatePassword(password) || password.length < 8) {
         passCheck.style.marginTop = "-22px";
         passCheck.style.marginBottom = "12px";
         passCheck.innerHTML = "Please write valid password";
-    }else {
+    } else {
         passCheck.innerHTML = "";
         passCheck.style.margin = "0";
     }
 }
 
-function changeUserPassword(){
+function changeUserPassword() {
     let newPass = $("#newPass").val();
     let reTypePass = $("#reEnterNewPass").val();
     let backEndError = $("#errorFromBackEnd");
@@ -66,14 +66,13 @@ function changeUserPassword(){
     let checkNewPass = $("#passCheck");
     let checkReEnteredPass = $("#reEnterPassCheck");
 
-    if (newPass === reTypePass){
+    if (newPass === reTypePass) {
         if (newPass.length > 7 && validatePassword(newPass)) {
             $.ajax({
                 type: 'post',
                 url: '../operations/liveUpdates/changePass.php',
                 data: {changePass: newPass},
                 success: function (msg) {
-                    console.log("asdjhgahsdgfv");
                     if (msg === "Your password has changed.") {
                         backEndError.css("color", "green");
                         $('input.chPass').val('');
@@ -82,24 +81,74 @@ function changeUserPassword(){
                         checkCurrentPass.text("");
                         checkNewPass.text("");
                         checkReEnteredPass.text("");
-                        checkCurrentPass.css("margin","0");
-                        checkNewPass.css("margin","0");
-                        checkReEnteredPass.css("margin","0");
-                    }else {
+                        checkCurrentPass.css("margin", "0");
+                        checkNewPass.css("margin", "0");
+                        checkReEnteredPass.css("margin", "0");
+                    } else {
                         backEndError.css("color", "red");
                         buttonChangePass.disabled = true;
                         backEndError.text(msg);
                     }
                 }
             })
-        }else {
+        } else {
             backEndError.css("color", "red");
             buttonChangePass.disabled = true;
             backEndError.text("Password is not valid.");
         }
-    }else {
+    } else {
         backEndError.css("color", "red");
         buttonChangePass.disabled = true;
-        backEndError.text("Passwords do not match");
+        backEndError.html("Passwords do not match");
+    }
+}
+
+
+function addLesson() {
+    let lessonTitle = $("#lessonTitle").val();
+    let meetingLink = $("#lessonLink").val();
+    let lessonData = $("#lessonDate").val();
+    let lessonDesc = $("#lessonDescription").val();
+    let errorText = $('#errorFromBackEnd');
+
+    errorText.css('color', 'red');
+
+    if (lessonTitle.length >= 10) {
+        if (meetingLink.length >= 7) {
+            if (lessonData.length >= 5) {
+                if (lessonDesc.length >= 60) {
+                    $.ajax({
+                        type: 'post',
+                        url: '../operations/liveUpdates/addLesson.php',
+                        data: {
+                            lessonTitle: lessonTitle,
+                            lessonData: lessonData,
+                            meetingLink: meetingLink,
+                            lessonDesc: lessonDesc,
+                        },
+                        success: function (msg) {
+                            if (msg === "Your Lesson Added") {
+                                errorText.css('color', 'green');
+                                $('#lessonTitle').val('');
+                                $('#lessonLink').val('');
+                                $('#lessonDate').val('');
+                                $('#lessonDescription').val('');
+                                errorText.text(msg);
+                            } else {
+                                errorText.text(msg);
+                            }
+                        }
+                    });
+                } else {
+                    errorText.text("Description length is low from 60");
+                }
+            } else {
+                errorText.text("Please select valid data");
+            }
+        } else {
+            errorText.text("Meeting text length is low from 7");
+        }
+    } else {
+        errorText.text("Title text length is low from 10");
     }
 }

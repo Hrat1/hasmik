@@ -37,6 +37,7 @@ include_once("../operations/privateOperatins.php");
     ?>
     <script src="../bootstrap/js/jquery.min.js"></script>
     <script src="../js/private.js"></script>
+    <script src="../js/api.js"></script>
     <script src="../mdb/js/mdb.min.js"></script>
 </body>
 </html>

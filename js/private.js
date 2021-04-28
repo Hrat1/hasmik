@@ -24,9 +24,3 @@ function checkPassword(password) {
         passCheck.innerHTML = "Password must be a minimum of 8 characters";
     }
 }
-
-
-function addLesson(){
-    let lessonDate = document.getElementById('lessonDate').value;
-    // console.log(lessonDate);
-}
