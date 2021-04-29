@@ -10,7 +10,7 @@
                         </div>
                         <div class="col-3 col-sm-3 col-md-4 col-lg-9 col-xl-9 s-list">
                             <span>It's a good idea to use a strong password that you're not using elsewhere</span>
-                            <button id="editPassword">Edit</button>
+                            <button id="editPassword" onclick="toggleChangePass()">Edit</button>
                         </div>
                     </div>
                     <div id="changePassWrapper" class="noHover">

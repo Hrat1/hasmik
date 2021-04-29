@@ -73,8 +73,6 @@ function checkIsAllFilled() {
 // change password from settings page section
 // change password button function
 
-document.getElementById("editPassword").onclick = function (){toggleChangePass()}
-
 function toggleChangePass(){
     let changePassWrapper = document.getElementById("changePassWrapper");
     let addBorderToWDiv = document.getElementsByClassName("changePass");

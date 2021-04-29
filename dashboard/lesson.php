@@ -77,8 +77,6 @@ include_once('../header.php');
                         echo $titleNotFound;
                         echo $notFound;
                     }
-
-
                 } else {
                     echo $titleNotFound;
                     echo $notFound;

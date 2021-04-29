@@ -204,6 +204,25 @@ textarea{
 .add_lesson:hover{
     color: #0e52c1;
 }
+.lesson-teacher-name{
+    text-align: right;
+    font-weight: bold;
+    padding-right: 0.5%;
+    margin-top: -4px;
+    margin-bottom: 0px;
+}
+.lessons-list-wrapper>div{
+    margin-bottom: 15px;
+}
+.lessons-not-found{
+    background-color: #fff;
+    border-radius: 5px;
+    margin-top: 13px;
+    padding: 25px 30px 17px;
+}
+.lessons-not-found>h4{
+    font-size: 18px;
+}
 
 /*teacher side end*/
 
@@ -223,9 +242,6 @@ textarea{
 .lesson-title{
     padding-bottom: 12px;
     border-bottom: 1px solid #bbb9b9;
-}
-.lesson-title:first-letter{
-    text-transform: uppercase;
 }
 .lesson-start-time{
     text-align: right;

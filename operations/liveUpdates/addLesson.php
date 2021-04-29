@@ -12,8 +12,8 @@ if (isset($_POST['lessonTitle']) && strlen($_POST['lessonTitle']) >= 5) {
                 $teacherVKey = $userVKey;
                 $lessonVKey = md5($userFirstNameDecr . $userLastNameDecr . date("Y-m-d h:i:sa"));
                 $lessonType = $userLessonType;
-                $lessonTitle = encrypt($_POST['lessonTitle']);
-                $lessonDesc = encrypt($_POST['lessonDesc']);
+                $lessonTitle = encrypt(ucfirst($_POST['lessonTitle']));
+                $lessonDesc = encrypt(ucfirst($_POST['lessonDesc']));
                 $lessonLink = encrypt($_POST['meetingLink']);
                 $lessonStartData = encrypt($_POST['lessonData']);
 

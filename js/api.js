@@ -3,6 +3,7 @@
 // script.type = 'text/javascript';
 // document.getElementsByTagName('head')[0].appendChild(script);
 
+
 function validateUsername(username) {
     let regularExpression = /^[a-z0-9_.-]*$/;
     return regularExpression.test(username);

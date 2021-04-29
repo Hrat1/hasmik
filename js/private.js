@@ -24,3 +24,20 @@ function checkPassword(password) {
         passCheck.innerHTML = "Password must be a minimum of 8 characters";
     }
 }
+
+
+function closeModal(){
+    let submitButton = document.getElementById('btnSuccess');
+    setTimeout(function () {
+        let isSubmittedText = document.getElementById('errorFromBackEnd');
+        if (isSubmittedText.innerHTML === "Your Lesson Added") {
+            submitButton.setAttribute("data-mdb-dismiss", "modal");
+            setTimeout(function () {
+                submitButton.click();
+                isSubmittedText.innerHTML = "";
+            },2000);
+        }
+    },100);
+
+
+}

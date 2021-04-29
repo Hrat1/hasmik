@@ -19,6 +19,16 @@ $userLastNameDecr = decrypt($userLastName);
 $userEmailDecr = decrypt($userEmail);
 $userNameDecr = decrypt($userName);
 
+if ($userLessonType == 1) {
+    $lessonTypeToString = "Web";
+}elseif ($userLessonType == 2){
+    $lessonTypeToString = "iOS";
+} elseif ($userLessonType == 3) {
+    $lessonTypeToString = "Android";
+}else{
+    $lessonTypeToString = "Unknown";
+}
+
 if ($getUserType == "2"){
 //    if user is parent
     $getChildData = $conn->query("SELECT * FROM users WHERE parent_vkey = '$userVKey'");
