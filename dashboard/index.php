@@ -8,7 +8,7 @@ include_once("../operations/privateOperatins.php");
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>YouCan</title>
     <link rel="stylesheet" href="../mdb/css/mdb.min.css"/>
     <link rel="stylesheet" href="../style/main.css">
     <link rel="stylesheet" href="../style/private.css">

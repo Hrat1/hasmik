@@ -23,7 +23,15 @@ textarea{
 .nav-tabs .nav-link:hover {
     border-radius: 2px!important;
 }
-
+.margin-from-header{
+    margin-top: 80px;
+}
+.notFoundWrapper{
+    text-align: center;
+}
+.notFoundWrapper>img{
+    width: 50%;
+}
 
 /*settings page style*/
 
@@ -199,6 +207,57 @@ textarea{
 
 /*teacher side end*/
 
+/*//////////////////////////////////////////////////////////////////*/
+
+/*lesson side start*/
+.lesson-wrapper{
+    background-color: #ffffff;
+    border-radius: 5px;
+}
+.lesson-attributes{
+    font-family: auto, serif;
+}
+.lesson-page-desc{
+    padding: 10px 12px;
+}
+.lesson-title{
+    padding-bottom: 12px;
+    border-bottom: 1px solid #bbb9b9;
+}
+.lesson-title:first-letter{
+    text-transform: uppercase;
+}
+.lesson-start-time{
+    text-align: right;
+    color: #636363;
+    font-size: 13px;
+    line-height: initial;
+}
+.lesson-description{
+    font-size: 15px;
+    text-align: justify;
+    padding-bottom: 16px;
+}
+.lesson-teacher>b{
+    font-size: 14px;
+    padding-left: 14px;
+}
+.lesson-description:first-letter{
+    text-transform: uppercase;
+}
+.lesson-link-label{
+    margin-bottom: 1px;
+}
+.lesson-web-link-wrapper{
+    margin-top: -5px;
+}
+.lesson-web-link-wrapper>a{
+    padding-left: 14px;
+    font-size: 14px;
+}
+
+
+/*lesson side end*/
 
 /*//////////////////////////////////////////////////////////////////*/
 
@@ -224,6 +283,9 @@ textarea{
     .my-wrapper{
         margin-top: 8%;
     }
+    .notFoundWrapper>img{
+        width: 78%;
+    }
 }
 @media only screen and (max-width: 770px) {
     .my-wrapper{
@@ -239,6 +301,9 @@ textarea{
     .my-wrapper{
         margin-top: 13.5%;
     }
+    .notFoundWrapper>img{
+        width: 88%;
+    }
 }
 @media only screen and (max-width: 415px) {
     .my-wrapper{
@@ -250,13 +315,6 @@ textarea{
     .lesson>div>p{
         font-size: 11px;
     }
-}
-
-
-/*media rules for settings page*/
-
-@media only screen and (max-width: 1600px) {
-
 }
 
 

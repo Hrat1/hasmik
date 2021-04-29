@@ -5,7 +5,7 @@ include_once('../encrypt.php');
 include_once('../checkOperations/checkUserType.php');
 $errorSWrong = "Something went wrong. Please try again";
 
-if (isset($_POST['lessonTitle']) && strlen($_POST['lessonTitle']) >= 10) {
+if (isset($_POST['lessonTitle']) && strlen($_POST['lessonTitle']) >= 5) {
     if (isset($_POST['meetingLink']) && strlen($_POST['meetingLink']) >= 7) {
         if (isset($_POST['lessonData']) && strlen($_POST['lessonData']) >= 5) {
             if (isset($_POST['lessonDesc']) && strlen($_POST['lessonDesc']) >= 60) {
@@ -39,7 +39,7 @@ if (isset($_POST['lessonTitle']) && strlen($_POST['lessonTitle']) >= 10) {
     } else {
         echo $errorSWrong;
     }
-} elseif (strlen($_POST['lessonTitle']) < 10) {
+} elseif (strlen($_POST['lessonTitle']) < 5) {
     echo "Title text length is low from 10";
 } else {
     echo $errorSWrong;

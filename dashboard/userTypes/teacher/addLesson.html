@@ -1,3 +1,4 @@
+<!--add lesson modal-->
 <div aria-hidden="true" aria-labelledby="addLesson" class="modal fade" id="addLessonModal" tabindex="-1">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -7,7 +8,7 @@
             </div>
             <div class="modal-body">
                 <p class="errorFromBackEnd" id="errorFromBackEnd"></p>
-                <form>
+                <form >
                     <div class="form-outline mb-4">
                         <input type="text" id="lessonTitle" class="form-control -bs" name="add_lesson_title" minlength="5" required/>
                         <label class="form-label" for="lessonTitle">Title</label>
@@ -33,4 +34,9 @@
         </div>
     </div>
 </div>
-
+<script>
+    let today = new Date().toISOString();
+    today = today.substr(0,16);
+    console.log(today)
+    document.getElementById("lessonDate").min = today;
+</script>

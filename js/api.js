@@ -104,6 +104,8 @@ function changeUserPassword() {
 }
 
 
+/////////////  add lesson ///////////////////
+
 function addLesson() {
     let lessonTitle = $("#lessonTitle").val();
     let meetingLink = $("#lessonLink").val();
@@ -113,7 +115,7 @@ function addLesson() {
 
     errorText.css('color', 'red');
 
-    if (lessonTitle.length >= 10) {
+    if (lessonTitle.length >= 5) {
         if (meetingLink.length >= 7) {
             if (lessonData.length >= 5) {
                 if (lessonDesc.length >= 60) {
