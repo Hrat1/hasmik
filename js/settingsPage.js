@@ -54,10 +54,10 @@ function checkIsAllFilled() {
                     let selectLesson = document.getElementById('selectSubject');
                     let selectedLesson = selectLesson.options[selectLesson.selectedIndex].text;
 
-                    if (selectedLesson === "English" || selectedLesson === "Spanish" || selectedLesson === "JavaScript") {
+                    if (selectedLesson === "Web" || selectedLesson === "iOS" || selectedLesson === "Android") {
                         button.disabled = false;
                     } else {
-                        button.selected = true;
+                        button.disabled = true;
                     }
                 } else {
                     button.disabled = true;

@@ -16,6 +16,7 @@ $userPass = $userDataRow['password'];
 //decrypted
 $userFirstNameDecr = decrypt($userFirstName);
 $userLastNameDecr = decrypt($userLastName);
+$userFullNameDecr = $userFirstNameDecr . " " . $userLastNameDecr;
 $userEmailDecr = decrypt($userEmail);
 $userNameDecr = decrypt($userName);
 

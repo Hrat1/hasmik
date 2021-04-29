@@ -35,6 +35,7 @@ function closeModal(){
             setTimeout(function () {
                 submitButton.click();
                 isSubmittedText.innerHTML = "";
+                document.location.reload();
             },2000);
         }
     },100);

@@ -48,18 +48,18 @@ if (isset($_POST['firstLoginInsert'])) {
                                     $encChildEmail = encrypt($childEmail);
                                     $childVKey = md5($childEmail);
 
-                                    $insertChildData = "INSERT INTO users (username, first_name, last_name, email, user_type, lesson_type, password, verified, vkey, parent_vkey) VALUES ( '". $encChildEmail ."','" . $encChildFName . "', '" . $encChildLName . "', '" . $encChildEmail . "',  '3', '" . $lessonType . "', '" . $encChildPass . "', '1', '" . $childVKey . "', '" . $userVKey . "')";
+                                    $insertChildData = "INSERT INTO users (username, first_name, last_name, email, user_type, lesson_type, password, verified, vkey, parent_vkey) VALUES ( '" . $encChildEmail . "','" . $encChildFName . "', '" . $encChildLName . "', '" . $encChildEmail . "',  '3', '" . $lessonType . "', '" . $encChildPass . "', '1', '" . $childVKey . "', '" . $userVKey . "')";
                                     $updateParentData = "UPDATE users SET user_type='" . $userType . "', lesson_type='" . $lessonType . "', username='" . $encUsername . "' WHERE email='" . $_SESSION['u_id'] . "'";
 
                                     if (mysqli_query($conn, $insertChildData)) {
                                         header("Refresh:0");
-                                    }else{
+                                    } else {
                                         echo "Error: " . $insertChildData . "<br>" . mysqli_error($conn);
                                     }
 
                                     if (mysqli_query($conn, $updateParentData)) {
                                         header("Refresh:0");
-                                    }else{
+                                    } else {
                                         echo "Error: " . $updateParentData . "<br>" . mysqli_error($conn);
                                     }
 
@@ -87,6 +87,34 @@ if (isset($_POST['firstLoginInsert'])) {
     }
 }
 
-//if(isset($_POST['dashboard'])){
-//
-//}
+
+//insert task file link to db and add task file to uploads folder
+
+if (isset($_POST['completeLesson']) && isset($_POST['lessonVideoLink']) && isset($_FILES['fileSelect']['name'])) {
+    if (strlen($_POST['lessonVideoLink']) < 8) {
+        $errorMsg = "Please write valid address";
+    } elseif (strlen($_FILES['fileSelect']['name']) < 5) {
+        $errorMsg = "Please select a valid file.";
+    } else {
+        $temp = explode(".", $_FILES["fileSelect"]["name"]);
+        $newFilename = $lessonTypeToString . "_" . $userNameDecr . "_" . round(microtime(true)) . '.' . end($temp);
+        $lessonVKey = $_GET['lessonId'];
+
+
+        if (copy($_FILES['fileSelect']['tmp_name'], "../uploads/" . $newFilename)) {
+            $fileName = encrypt($newFilename);
+            $lessonVideoLink = encrypt($_POST['lessonVideoLink']);
+            $updateLessonData = "UPDATE lessons SET lesson_task='" . $fileName . "', lesson_video_link='" . $lessonVideoLink . "' WHERE lesson_vkey='" . $lessonVKey . "'";
+
+            if (mysqli_query($conn, $updateLessonData)) {
+                header("Refresh:0");
+            } else {
+                echo "Error: " . $updateLessonData . "<br>" . mysqli_error($conn);
+            }
+        } else {
+            $errorMsg = "Something is wrong";
+        }
+    }
+}
+
+

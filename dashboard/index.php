@@ -35,6 +35,7 @@ include_once("../operations/privateOperatins.php");
         include_once('userTypes/teacher/index.php');
     }
     ?>
+
     <script src="../bootstrap/js/jquery.min.js"></script>
     <script src="../js/private.js"></script>
     <script src="../js/api.js"></script>

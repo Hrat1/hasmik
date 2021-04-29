@@ -1,0 +1,26 @@
+<!-- AddTask -->
+<div class="modal fade" id="completeLessonEdit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <form method="post" enctype="multipart/form-data" class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Add lesson Task</h5>
+                <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="form-outline mb-4">
+                    <input type="text" id="lessonVideoLink" class="form-control -bs" name="lessonVideoLink" autocomplete="off" minlength="8" required/>
+                    <label class="form-label" for="lessonVideoLink">Video Link</label>
+                </div>
+                <div class="input-group mb-3">
+                    <input type="file" name="fileSelect" class="form-control" id="inputGroupFile01" required/>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-light" data-mdb-dismiss="modal">
+                    Close
+                </button>
+                <button type="submit" name="completeLesson" class="btn btn-success">Save changes</button>
+            </div>
+        </form>
+    </div>
+</div>
