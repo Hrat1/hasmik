@@ -18,9 +18,9 @@
     <div class="form-group mb-4">
         <select id="selectSubject" class="form-select custom-select" onchange="checkIsAllFilled()" name='selectLesson'>
             <option value="" selected disabled>Select Lesson</option>
-            <option value="1">English</option>
-            <option value="2">Spanish</option>
-            <option value="3">JavaScript</option>
+            <option value="1">Web</option>
+            <option value="2">iOS</option>
+            <option value="3">Android</option>
         </select>
     </div>
     <div id="child" class="form-group">
