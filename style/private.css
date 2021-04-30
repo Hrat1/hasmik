@@ -1,62 +1,94 @@
 @import "global.css";
 
-body{
+body {
     background-color: #ffffff;
     overflow-x: hidden;
 }
-select{
-    color: #666!important;
+
+select {
+    color: #666 !important;
 }
-textarea{
-    max-height: 81px!important;
-    min-height: 76px!important;
+
+textarea {
+    max-height: 81px !important;
+    min-height: 76px !important;
 }
-.my-wrapper{
+
+.my-wrapper {
     margin-top: 4%;
 }
-.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active{
-    color: #121313!important;
-    border: none!important;
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    color: #121313 !important;
+    border: none !important;
     background-color: #e7e6e6 !important;
-    border-radius: 5px!important;
+    border-radius: 5px !important;
 }
+
 .nav-tabs .nav-link:hover {
-    border-radius: 2px!important;
+    border-radius: 2px !important;
 }
-.margin-from-header{
+
+.margin-from-header {
     margin-top: 80px;
 }
-.notFoundWrapper{
+
+.notFoundWrapper {
     text-align: center;
 }
-.notFoundWrapper>img{
+
+.notFoundWrapper > img {
     width: 50%;
 }
-.edit-button{
-    float: right!important;
+
+.edit-button {
+    float: right !important;
     font-size: 14px;
     margin-top: 6px;
     margin-right: 5px;
     cursor: pointer;
 }
+
 .edit-button:hover {
     color: #0e52c1;
 }
 
+#responseMessageWrapper {
+    z-index: 100000;
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    background-color: #1b1a1a33;
+    height: 100%;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: red;
+}
+
+#responseMessage {
+    background-color: #ffffff;
+    padding: 15px 18px;
+    max-width: 472px;
+    border-radius: 6px;
+    font-family: auto, serif;
+}
+
 /*settings page style*/
 
-.my-settings-form{
+.my-settings-form {
     padding: 12px;
 }
 
-.sHeader{
+.sHeader {
     padding: 11px;
     font-weight: 500;
     font-size: 22px;
     color: #333;
 }
 
-.sTabHeaders{
+.sTabHeaders {
     padding-bottom: 11px;
     font-weight: 500;
     font-size: 20px;
@@ -64,66 +96,77 @@ textarea{
 }
 
 .s-left-side {
-   border-right: 1px solid #ccc;
+    border-right: 1px solid #ccc;
 }
 
-.s-right-content{
+.s-right-content {
     padding: 1px 8px 0 12px;
     border-bottom: 1px solid #bebebe;
     border-top: 1px solid #bebebe;
 }
-.list-items{
+
+.list-items {
     list-style-type: none;
     padding-left: 1px;
     padding-right: 1px;
     margin-bottom: 2px;
 }
-.list-items>li{
+
+.list-items > li {
     border-bottom: 1px solid #dbdbdb;
     padding: 5px 0 5px 0;
 }
-.list-items>li:last-child{
+
+.list-items > li:last-child {
     border-bottom: none;
 }
-.list-items>li:nth-child(2){
+
+.list-items > li:nth-child(2) {
     border-bottom: 1px solid #dbdbdb;
 }
-.list-items>li>div{
-    margin: 0 ;
+
+.list-items > li > div {
+    margin: 0;
     padding: 13px 0 13px 0;
 }
-.list-items>li>div:hover{
+
+.list-items > li > div:hover {
     background-color: #f5f6f7;
 }
 
-.list-items>li>div>div:first-child{
+.list-items > li > div > div:first-child {
     color: #1c1e21;
     font-weight: 600;
     line-height: 20px;
 }
-.list-items>li>div>div:nth-child(2){
+
+.list-items > li > div > div:nth-child(2) {
     color: #65676b;
     font-size: 15px;
     letter-spacing: -0.24px;
     line-height: 20px;
 
 }
-.firstLoginData{
+
+.firstLoginData {
     padding-top: 10px;
 }
-.errorFromBackEnd{
+
+.errorFromBackEnd {
     color: red;
     padding-bottom: 10px;
     font-size: 14px;
 }
-.name{
+
+.name {
     text-transform: capitalize;
 }
 
-#child{
+#child {
     display: none;
 }
-.s-list>button{
+
+.s-list > button {
     background: #ebedf0;
     border: solid 1px #ccd0d5;
     color: #4b4f56;
@@ -140,25 +183,30 @@ textarea{
     text-shadow: none;
     vertical-align: middle;
 }
-.s-list>button:hover {
+
+.s-list > button:hover {
     background-color: #dee1e4;
 }
 
-.noHover:hover{
-    background-color: transparent!important;
+.noHover:hover {
+    background-color: transparent !important;
 }
-#changePassWrapper{
+
+#changePassWrapper {
     display: none;
     padding: 10px 20px;
 }
-#changePassWrapper>form{
+
+#changePassWrapper > form {
     max-width: 431px;
     margin: 0 auto;
 }
-#changePassWrapper>form>button{
+
+#changePassWrapper > form > button {
     max-width: fit-content;
     float: right;
 }
+
 /*settings page end*/
 
 
@@ -175,26 +223,29 @@ textarea{
     border-radius: 5px;
 }
 
-.lesson{
+.lesson {
     position: relative;
     color: #000000;
     border-radius: 5px;
     top: 15px;
     bottom: 15px;
 }
-.lesson>div {
+
+.lesson > div {
     background-color: #fff;
     font-family: auto, serif;
     border-radius: 5px;
     padding: 18px 33px;
 }
-.lesson>div>h6{
+
+.lesson > div > h6 {
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
 }
-.lesson>div>p{
+
+.lesson > div > p {
     color: #737373;
     font-size: 14px;
     overflow: hidden;
@@ -202,7 +253,8 @@ textarea{
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
 }
-.add_lesson{
+
+.add_lesson {
     float: right;
     right: 22px;
     top: -8px;
@@ -211,26 +263,31 @@ textarea{
     font-size: 23px;
     color: #636363;
 }
-.add_lesson:hover{
+
+.add_lesson:hover {
     color: #0e52c1;
 }
-.lesson-teacher-name{
+
+.lesson-teacher-name {
     text-align: right;
     font-weight: bold;
     padding-right: 0.5%;
     margin-top: -4px;
     margin-bottom: 0px;
 }
-.lessons-list-wrapper>div{
+
+.lessons-list-wrapper > div {
     margin-bottom: 15px;
 }
-.lessons-not-found{
+
+.lessons-not-found {
     background-color: #fff;
     border-radius: 5px;
     margin-top: 13px;
     padding: 25px 30px 17px;
 }
-.lessons-not-found>h4{
+
+.lessons-not-found > h4 {
     font-size: 18px;
 }
 
@@ -239,58 +296,76 @@ textarea{
 /*//////////////////////////////////////////////////////////////////*/
 
 /*lesson side start*/
-.lesson-wrapper{
+.lesson-wrapper {
     background-color: #ffffff;
     border-radius: 5px;
 }
-.lesson-attributes{
+
+.lesson-attributes {
     font-family: auto, serif;
 }
-.lesson-page-desc{
+
+.lesson-page-desc {
     padding: 10px 12px;
 }
-.lesson-title{
+
+.lesson-title {
     padding-bottom: 12px;
     border-bottom: 1px solid #bbb9b9;
 }
-.lesson-start-time{
+
+.lesson-start-time {
     text-align: right;
     color: #636363;
     font-size: 13px;
     line-height: initial;
 }
-.lesson-description{
+
+.lesson-description {
     font-size: 15px;
     text-align: justify;
     padding-bottom: 16px;
 }
-.lesson-teacher>b{
+
+.lesson-teacher > b {
     font-size: 14px;
     padding-left: 14px;
 }
-.lesson-description:first-letter{
+
+.lesson-description:first-letter {
     text-transform: uppercase;
 }
-.lesson-link-label{
+
+.lesson-link-label {
     margin-bottom: 1px;
 }
-.lesson-web-link-wrapper{
+
+.lesson-web-link-wrapper {
     margin-top: -5px;
 }
-.lesson-web-link-wrapper>a{
+
+.lesson-web-link-wrapper > a {
     padding-left: 14px;
     font-size: 14px;
 }
-.lw{
+
+.lw {
     margin-bottom: 7px;
     /*margin-top: 7px;*/
 }
-.lw>p{
+
+.lw > p {
     margin-bottom: 1px;
 }
-.lw>a{
+
+.lw > a {
     padding-left: 14px;
     font-size: 14px;
+}
+.lw>h6{
+    padding-left: 14px;
+    margin-top: 3px;
+    font-size: 13px;
 }
 
 
@@ -303,53 +378,63 @@ textarea{
 
 /*global private media rules*/
 @media only screen and (max-width: 1650px) {
-    .my-wrapper{
+    .my-wrapper {
         margin-top: 5%;
     }
 }
 
 @media only screen and (max-width: 1200px) {
-    .my-wrapper{
+    .my-wrapper {
         margin-top: 6.5%;
     }
-    .s-list>span{
+
+    .s-list > span {
         display: none;
     }
 }
+
 @media only screen and (max-width: 930px) {
-    .my-wrapper{
+    .my-wrapper {
         margin-top: 8%;
     }
-    .notFoundWrapper>img{
+
+    .notFoundWrapper > img {
         width: 78%;
     }
 }
+
 @media only screen and (max-width: 770px) {
-    .my-wrapper{
+    .my-wrapper {
         margin-top: 9.5%;
     }
 }
+
 @media only screen and (max-width: 600px) {
-    .my-wrapper{
+    .my-wrapper {
         margin-top: 12%;
     }
 }
+
 @media only screen and (max-width: 600px) {
-    .my-wrapper{
+    .my-wrapper {
         margin-top: 13.5%;
     }
-    .notFoundWrapper>img{
+
+    .notFoundWrapper > img {
         width: 88%;
     }
 }
+
 @media only screen and (max-width: 415px) {
-    .my-wrapper{
+    .my-wrapper {
         margin-top: 17%;
     }
-    .lesson>div{
+
+    .lesson > div {
         padding: 18px 20px;
     }
-    .lesson>div>p{
+
+    .lesson > div > p {
         font-size: 11px;
     }
 }

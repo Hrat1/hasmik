@@ -1,0 +1,24 @@
+<!--add lesson modal-->
+<div aria-hidden="true" aria-labelledby="addHomework" class="modal fade" id="addHomework" tabindex="-1">
+    <div class="modal-dialog">
+        <form class="modal-content" enctype="multipart/form-data" method="post">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addLesson">Add Homework</h5>
+                <button aria-label="Close" class="btn-close" data-mdb-dismiss="modal" type="button"></button>
+            </div>
+
+            <div class="modal-body">
+                <p class="errorFromBackEnd" id="errorFromBackEnd"></p>
+                <div>
+                    <div class="input-group mb-3">
+                        <input class="form-control" id="inputGroupFile01" name="homeworkSelect" required type="file"/>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-light" data-mdb-dismiss="modal" type="button">Close</button>
+                <button class="btn btn-success" id="btnSuccess" name="addHomework" type="submit">Add Homework</button>
+            </div>
+        </form>
+    </div>
+</div>

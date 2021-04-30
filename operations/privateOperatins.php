@@ -88,7 +88,7 @@ if (isset($_POST['firstLoginInsert'])) {
 }
 
 
-//insert task file link to db and add task file to uploads folder
+//insert task file link, video link to db and add task file to uploads folder
 
 if (isset($_POST['completeLesson']) && isset($_POST['lessonVideoLink']) && isset($_FILES['fileSelect']['name'])) {
     if (strlen($_POST['lessonVideoLink']) < 8) {
@@ -107,13 +107,45 @@ if (isset($_POST['completeLesson']) && isset($_POST['lessonVideoLink']) && isset
             $updateLessonData = "UPDATE lessons SET lesson_task='" . $fileName . "', lesson_video_link='" . $lessonVideoLink . "' WHERE lesson_vkey='" . $lessonVKey . "'";
 
             if (mysqli_query($conn, $updateLessonData)) {
-                header("Refresh:0");
+                echo "<script>window.location = window.location.href;</script>";
             } else {
                 echo "Error: " . $updateLessonData . "<br>" . mysqli_error($conn);
             }
         } else {
             $errorMsg = "Something is wrong";
         }
+    }
+}
+
+
+//insert homework file link to db and add homework file to uploads folder
+
+
+if (isset($_POST['addHomework']) && isset($_FILES['homeworkSelect']['name']) && isset($_GET['lessonId'])) {
+    if (strlen($_FILES['homeworkSelect']['name']) < 5) {
+        $responseMsg = "Please select a valid file.";
+    } else {
+        $temp = explode(".", $_FILES["homeworkSelect"]["name"]);
+        $newFilename = $lessonTypeToString . "_" . $userNameDecr . "_" . round(microtime(true)) . '.' . end($temp);
+
+        if (copy($_FILES['homeworkSelect']['tmp_name'], "../uploads/homeworks/" . $newFilename)) {
+            $exerciseVKey = md5($userNameDecr . date("Y-m-d h:i:sa"));
+            $lessonVKey = $_GET['lessonId'];
+            $studentVKey = $userVKey;
+            $fileName = encrypt($newFilename);
+
+            $insertExerciseQ = "INSERT INTO exercises (exercise_vkey, lesson_vkey, student_vkey, exercise_file) VALUES ('". $exerciseVKey ."', '". $lessonVKey ."', '". $studentVKey ."', '". $fileName ."')";
+
+            if (mysqli_query($conn, $insertExerciseQ)) {
+                echo "<script>window.location = window.location.href;</script>";
+            } else {
+                echo "Error: " . $insertExerciseQ . "<br>" . mysqli_error($conn);
+            }
+        } else {
+            $errorMsg = "Something is wrong";
+        }
+
+//        echo "<script>window.location = window.location.href;</script>";
     }
 }
 

@@ -155,3 +155,4 @@ function addLesson() {
         errorText.text("Title text length is low from 10");
     }
 }
+
