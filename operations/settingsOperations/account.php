@@ -23,16 +23,21 @@
                         </div>
                     </div>
                 </li>
-                <li class="list-item">
-                    <div class="row">
-                        <div class="col-12 col-sm-3 col-md-3 col-lg-3 col-xl-3 s-list">
-                            Username
+                <?php
+                if (strlen($userName) > 3) {
+                    ?>
+                    <li class="list-item">
+                        <div class="row">
+                            <div class="col-12 col-sm-3 col-md-3 col-lg-3 col-xl-3 s-list">
+                                Username
+                            </div>
+                            <div class="col-12 col-sm-9 col-md-9 col-lg-9 col-xl-9 s-list">
+                                <?php echo "$userNameDecr"; ?>
+                            </div>
                         </div>
-                        <div class="col-12 col-sm-9 col-md-9 col-lg-9 col-xl-9 s-list">
-                            <?php echo "$userNameDecr"; ?>
-                        </div>
-                    </div>
-                </li>
+                    </li>
+                    <?php
+                } ?>
             </ul>
             <?php
             if ($getUserType == 0) {

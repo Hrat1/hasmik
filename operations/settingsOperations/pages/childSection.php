@@ -29,15 +29,7 @@
                             Lesson
                         </div>
                         <div class="col-12 col-sm-9 col-md-9 col-lg-9 col-xl-9 s-list">
-                            <?php
-                            if ($getChildLessonType == 1) {
-                                echo "English";
-                            } elseif ($getChildLessonType == 2) {
-                                echo "Spanish";
-                            } elseif ($getChildLessonType == 3) {
-                                echo "JavaScript";
-                            }
-                            ?>
+                            <?php echo $lessonTypeToString; ?>
                         </div>
                     </div>
                 </li>

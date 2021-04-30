@@ -5,7 +5,7 @@
     </button>
     <?php
         if (isset($_SESSION['u_id'])){
-            echo "<a href='../operations/logout.php'>Log Out</a>";
+            echo "<a href='/operations/logout.php'>Log Out</a>";
         }else{
             echo '<div class="collapse navbar-collapse" id="navbarNav">
                     <ul id="mainNav" class="navbar-nav mr-auto">
