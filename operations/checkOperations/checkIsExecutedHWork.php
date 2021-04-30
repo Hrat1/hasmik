@@ -10,6 +10,7 @@ if (isset($_GET['lessonId'])) {
         $exStudentVKey = $exerciseRow['student_vkey'];
         $exFile = decrypt($exerciseRow['exercise_file']);
         $exAssessment = $exerciseRow['exercise_assessment'];
+        $exLessonType = $exerciseRow['lesson_type'];
         $exIsSubmitted = 1;
     }else{
         $exIsSubmitted = 0;

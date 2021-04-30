@@ -133,8 +133,9 @@ if (isset($_POST['addHomework']) && isset($_FILES['homeworkSelect']['name']) && 
             $lessonVKey = $_GET['lessonId'];
             $studentVKey = $userVKey;
             $fileName = encrypt($newFilename);
+            $lessonType = $userLessonType;
 
-            $insertExerciseQ = "INSERT INTO exercises (exercise_vkey, lesson_vkey, student_vkey, exercise_file) VALUES ('". $exerciseVKey ."', '". $lessonVKey ."', '". $studentVKey ."', '". $fileName ."')";
+            $insertExerciseQ = "INSERT INTO exercises (exercise_vkey, lesson_vkey, student_vkey, exercise_file, lesson_type) VALUES ('". $exerciseVKey ."', '". $lessonVKey ."', '". $studentVKey ."', '". $fileName ."', '". $lessonType ."')";
 
             if (mysqli_query($conn, $insertExerciseQ)) {
                 echo "<script>window.location = window.location.href;</script>";
