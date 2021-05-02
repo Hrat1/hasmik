@@ -1,0 +1,36 @@
+<div aria-hidden="true" aria-labelledby="changePointModalLabel" class="modal fade" id="changePoint" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="changePointModalLabel">Change point</h5>
+                <button aria-label="Close" class="btn-close" data-mdb-dismiss="modal" type="button"></button>
+            </div>
+            <div class="modal-body">
+                <p id="errorFromBackEnd" class="errorFromBackEnd errorStyle"></p>
+                <div class="mb-3">
+                    <label for="changePointSelect" class="mb-2">Change Point:</label>
+                    <select id="changePointSelect" class="form-select custom-select" name='selectPoint' required>
+                        <option value="" selected disabled>Select Point</option>
+                        <option value="0.5">0.5</option>
+                        <option value="1">1</option>
+                        <option value="1.5">1.5</option>
+                        <option value="2">2</option>
+                        <option value="2.5">2.5</option>
+                        <option value="3">3</option>
+                        <option value="3.5">3.5</option>
+                        <option value="4">4</option>
+                        <option value="4.5">4.5</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+                <p id="user-key"></p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-light" data-mdb-dismiss="modal" type="button">
+                    Close
+                </button>
+                <button class="btn btn-success" onclick="changePoint()" type="button">Change Point</button>
+            </div>
+        </div>
+    </div>
+</div>

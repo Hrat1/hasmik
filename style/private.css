@@ -74,6 +74,19 @@ textarea {
     border-radius: 6px;
     font-family: auto, serif;
 }
+.edit-point{
+    cursor: pointer;
+}
+.edit-point:hover{
+    color: #0e52c1;
+}
+.errorStyle{
+    display: none;
+    margin-bottom: 2px;
+}
+#user-key{
+    display: none;
+}
 
 /*settings page style*/
 
@@ -366,6 +379,25 @@ textarea {
     padding-left: 14px;
     margin-top: 3px;
     font-size: 13px;
+}
+.other-lesson-type{
+    padding-top: 28px;
+    padding-bottom: 28px;
+    text-align: center;
+}
+.whoHT{
+    background-color: #ffffff;
+    border-radius: 5px;
+}
+.who-submitted-task-wrapper{
+    padding: 25px 5px;
+}
+.who-submitted-task-wrapper>h6{
+    color: #757575;
+}
+.who-submitted-task-wrapper>a{
+    padding-left: 18px;
+    font-size: 14px;
 }
 
 

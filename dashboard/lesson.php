@@ -8,8 +8,8 @@ include_once("../operations/privateOperatins.php");
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
     <meta http-equiv="Expires" content="-1"/>
     <link rel="stylesheet" href="../mdb/css/mdb.min.css"/>
     <link rel="stylesheet" href="../style/main.css">
@@ -124,21 +124,20 @@ include_once('../header.php');
                                     <?php
                                 }
                                 if (isset($exIsSubmitted) && $exIsSubmitted == 1 && ($getUserType == 1 || $getUserType == 3)) {
-                                    if ($exAssessment == null) {
-                                        $convertedExAssessment = "Exercise under review";
-                                    }elseif ($exAssessment >= 0 && $exAssessment <= 5) {
+                                    if ($exAssessment > 0 && $exAssessment <= 5) {
                                         $convertedExAssessment = "Assessment of the assignment: " . $exAssessment;
+                                    } else {
+                                        $convertedExAssessment = "Exercise under review";
                                     }
                                     ?>
                                     <div class="lesson-my-work lw">
                                         <p class="lesson-video-label">Submitted exercise</p>
                                         <h6>
-                                            <?php echo $convertedExAssessment;?>
+                                            <?php echo $convertedExAssessment; ?>
                                         </h6>
                                         <a href="/uploads/homeworks/<?php echo $exFile; ?>" download>
                                             Download a file
                                         </a>
-
                                     </div>
                                     <?php
                                 }
@@ -157,6 +156,8 @@ include_once('../header.php');
                 echo $titleNotFound;
                 echo $notFound;
             }
+        } elseif (isset($_GET['whoSubmittedTask']) && $_GET['whoSubmittedTask'] != null) {
+            include_once "whoSubmittedTask.php";
         } else {
             echo $titleNotFound;
             echo $notFound;
@@ -164,6 +165,31 @@ include_once('../header.php');
         ?>
     </div>
 </div>
+
+<?php
+if (isset($_GET['lessonId']) && $_GET['lessonId'] != null){
+    $lessonID = $_GET['lessonId'];
+    if (strlen($lessonID) > 6 && isset($lessonTask) && isset($lessonVideoLink) && strlen($lessonTask) > 2 && strlen($lessonVideoLink) > 2) {
+        $getUsersWhoSubmittedExQ = "SELECT * FROM exercises WHERE  lesson_vkey ='$lessonID'";
+        $getExUsersList = $conn->query($getUsersWhoSubmittedExQ);
+
+        if ($getExUsersList->num_rows > 0) {
+            $whoSubmittedExResp = "<a href='/dashboard/lesson.php?whoSubmittedTask=". $lessonID ."'>Click to view people list</a>";
+        }else{
+            $whoSubmittedExResp = "<h6>No one who submitted homework</h6>";
+        }
+        ?>
+        <div class="container mt-3 whoHT">
+            <div class="who-submitted-task-wrapper">
+                <h5 class="pb-1">List of people who did homework</h5>
+                <?php echo $whoSubmittedExResp;?>
+            </div>
+        </div>
+        <?php
+    }
+}
+?>
+
 <?php
 if (isset($teacherVKey) && $userVKey == $teacherVKey && strlen($lessonTask) < 2 && strlen($lessonVideoLink) < 2) {
     include_once "addLessonTask.html";
@@ -183,7 +209,7 @@ if (isset($responseMsg)) {
         let responseWrapper = document.getElementById('responseMessageWrapper');
         let responseText = document.getElementById('responseMessage');
         setTimeout(function () {
-                window.location = window.location.href;
+            window.location = window.location.href;
         }, 1500);
     </script>
     <?php
