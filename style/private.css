@@ -18,6 +18,9 @@ textarea {
 .my-wrapper {
     margin-top: 4%;
 }
+.ht-db-991{
+    display: none;
+}
 
 .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
     color: #121313 !important;
@@ -87,6 +90,54 @@ textarea {
 }
 #user-key{
     display: none;
+}
+
+.ht-dropdown{
+    margin-top: -5px;
+}
+.ht-dropdown>.fa-circle{
+    font-size: 36px;
+    color: #e3e6ea;
+}
+.ht-dropdown:hover>.fa-circle{
+    color: #dddde3;
+}
+.ht-dropdown>.fa-caret-down{
+    left: 4.5px;
+    color: #000000;
+}
+.nav-link{
+    color: #454545 !important;
+}
+/*.nav-link:hover{*/
+/*    color: #000000!important;*/
+/*}*/
+.ht-user {
+    background-color: #eeeeee;
+    border-radius: 20px;
+    padding-bottom: 0!important;
+}
+.ht-user>svg{
+    margin-top: -3px;
+    font-size: 28px;
+}
+.ht-user:hover>.fa-user-circle{
+    color: #454545!important;
+}
+.ht-user>span{
+    color: #000000!important;
+}
+.ht-user:hover{
+    background-color: #dedede;
+}
+.ht-first-name{
+    position: relative;
+    top: -6px;
+    padding-left: 4px;
+    padding-right: 8px;
+}
+.navbar-brand{
+    margin-top: -6px!important;
 }
 
 /*settings page style*/
@@ -452,6 +503,25 @@ textarea {
     }
 }
 
+@media only screen and (max-width: 991px){
+    .ht-dn-991{
+        display: none;
+    }
+    .navbar-brand{
+        padding-top: 9px;
+        margin-right: 45VW;
+    }
+    .navbar-toggler{
+        margin-top: 0!important;
+    }
+    .ht-db-991{
+        display: block;
+    }
+    .nav-link{
+        text-align: center;
+    }
+}
+
 @media only screen and (max-width: 930px) {
     .my-wrapper {
         margin-top: 8%;
@@ -465,6 +535,9 @@ textarea {
 @media only screen and (max-width: 770px) {
     .my-wrapper {
         margin-top: 9.5%;
+    }
+    .navbar-brand{
+        margin-right: 43.8VW;
     }
 }
 
@@ -482,6 +555,9 @@ textarea {
     .notFoundWrapper > img {
         width: 88%;
     }
+    .navbar-brand{
+        margin-right: 41.5VW;
+    }
 }
 
 @media only screen and (max-width: 415px) {
@@ -496,7 +572,13 @@ textarea {
     .lesson > div > p {
         font-size: 11px;
     }
+    .navbar-brand{
+        margin-right: 38.5VW;
+    }
 }
-
-
-
+@media only screen and (max-width: 360px) {
+    .navbar-brand{
+        padding-top: 9px;
+        margin-right: 36.5VW;
+    }
+}

@@ -13,6 +13,7 @@ include_once("../operations/privateOperatins.php");
     <link rel="stylesheet" href="../style/main.css">
     <link rel="stylesheet" href="../style/private.css">
     <link rel="stylesheet" href="../bootstrap/icons/bootstrap-icons.css">
+    <link rel="stylesheet" href="../fontawesome/css/all.min.css">
 </head>
 <body style="background-color: #eff2f5!important;">
     <?php
@@ -37,6 +38,7 @@ include_once("../operations/privateOperatins.php");
     ?>
 
     <script src="../bootstrap/js/jquery.min.js"></script>
+    <script src="../fontawesome/js/all.min.js"></script>
     <script src="../js/private.js"></script>
     <script src="../js/api.js"></script>
     <script src="../mdb/js/mdb.min.js"></script>

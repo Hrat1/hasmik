@@ -13,6 +13,7 @@ privateSession($conn);
     <link rel="stylesheet" href="../mdb/css/mdb.min.css"/>
     <link rel="stylesheet" href="../style/private.css">
     <link rel="stylesheet" href="../bootstrap/icons/bootstrap-icons.css">
+    <link rel="stylesheet" href="../fontawesome/css/all.min.css">
 </head>
 <body>
 
@@ -94,6 +95,7 @@ privateSession($conn);
 <script src="../js/api.js"></script>
 <script src="../js/private.js"></script>
 <script type="text/javascript" src="../mdb/js/mdb.min.js"></script>
+<script src="../fontawesome/js/all.min.js"></script>
 </body>
 </html>
 
