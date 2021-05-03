@@ -3,6 +3,7 @@
 body {
     background-color: #ffffff;
     overflow-x: hidden;
+    font-family: auto, serif;
 }
 
 select {
@@ -404,6 +405,32 @@ textarea {
 /*lesson side end*/
 
 /*//////////////////////////////////////////////////////////////////*/
+
+
+/*parent side start*/
+.my-child-have-no-submitted-task{
+    background-color: white;
+    border-radius: 5px;
+    padding: 18px 22px;
+}
+.my-child-have-no-submitted-task>h6{
+    color: #6b6a6a;
+}
+.my-child-submitted-task-list-w{
+    border-radius: 5px;
+}
+.my-child-submitted-task-list-w>table{
+    background-color: white;
+    border-radius: 5px;
+}
+
+
+
+
+
+/*parent side End*/
+
+/*///////////////////////////////////////////////////////////////////////////*/
 
 /*media rules */
 
