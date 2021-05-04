@@ -56,7 +56,7 @@ include_once("../operations/publicOperations.php");
             <label class="form-label" for="regPassword">Password</label>
         </div>
         <p id="passCheck" class="errorCheckForInput"></p>
-        <button type="submit" name="reg_submit" id="regButton" class="btn btn-success btn-block mb-4 signUpSubmitButton" disabled>Sign up</button>
+        <button type="submit" name="reg_submit" id="regButton" class="btn text-white ht-button btn-block mb-4 signUpSubmitButton" disabled>Sign up</button>
         <p>Already have an account? <a href="signin.php">SignIn</a></p>
     </form>
 </div>

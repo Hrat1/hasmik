@@ -4,7 +4,12 @@ body{
     background-color: #e9e9e9;
     overflow-x: hidden;
 }
-
+.ht-button{
+    background-color: #762c80!important;
+}
+.ht-button:hover{
+    background-color: #541e6b!important;
+}
 /*Header style Start*/
 .navbar{
     text-align: center;

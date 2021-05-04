@@ -35,7 +35,7 @@ if (!isset($_GET['changePassId']) || $_GET['changePassId'] = null || strlen($_GE
             <label class="form-label" for="passwordTwo">Repeat Password</label>
         </div>
         <p id="passCheckTwo" class="errorCheckForInput"></p>
-        <button type="submit" id="changePassButton" name="change_pass_submit" class="btn btn-success btn-block signInSubmitButton" disabled>Change Password</button>
+        <button type="submit" id="changePassButton" name="change_pass_submit" class="btn text-white ht-button btn-block signInSubmitButton" disabled>Change Password</button>
     </form>
 </div>
 

@@ -31,7 +31,7 @@ include_once("../operations/publicOperations.php"); ?>
             <label class="form-label" for="email">Email address</label>
         </div>
         <p id="emailCheck" class="errorCheckForInput"></p>
-        <button type="submit" name="forgot_submit" id="forgotButton" class="btn btn-success btn-block signInSubmitButton">Forgot</button>
+        <button type="submit" name="forgot_submit" id="forgotButton" class="btn text-white ht-button btn-block signInSubmitButton">Forgot</button>
     </form>
 </div>
 

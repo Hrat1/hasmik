@@ -39,7 +39,7 @@ include_once("../operations/publicOperations.php"); ?>
                 <a href="forgotPassword.php" class="link">Forgot password?</a>
             </div>
         </div>
-        <button type="submit" name="log_submit" class="btn btn-success btn-block signInSubmitButton">Sign in</button>
+        <button type="submit" name="log_submit" class="btn btn-block signInSubmitButton text-white ht-button">Sign in</button>
         <p>Not a member? <a href="signup.php">Register</a></p>
     </form>
 </div>
