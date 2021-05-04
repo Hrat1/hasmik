@@ -50,11 +50,26 @@
             ?>
             <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <?php
+                    if (isset($getUserType) && $getUserType == 2) {
+                        ?>
+                        <li class="nav-item nav-li">
+                            <a class="nav-link" href="/dashboard/index.php?lessons">
+                                <span class="ht-first-name"><?php echo $lessonTypeToString;?> Lessons</span>
+                            </a>
+                        </li>
+                        <?php
+                    }
+                    ?>
                     <li class="nav-item ht-dn-991">
                         <a class="nav-link ht-user" href="#">
                             <i class="fas fa-user-circle"></i>
                             <span class="ht-first-name"><?php echo $userFirstNameDecr;?></span>
                         </a>
+                    </li>
+
+                    <li>
+
                     </li>
                     <li class="nav-item ht-db-991">
                         <a class="nav-link" href="/settings">

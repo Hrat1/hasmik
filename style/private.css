@@ -32,6 +32,9 @@ textarea {
 .nav-tabs .nav-link:hover {
     border-radius: 2px !important;
 }
+.nav-li>a{
+    padding-top: 14px;
+}
 
 .margin-from-header {
     margin-top: 80px;
